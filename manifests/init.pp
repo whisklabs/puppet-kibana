@@ -77,7 +77,7 @@ class kibana (
   if $kibana::install_url {
     $managed_install_url = $kibana::install_url
     $download_file_name = url_parse($kibana::install_url,'filedir')
-    $extracted_dir = ${download_file_name}
+    $extracted_dir = $download_file_name
   } else {
     $managed_install_url = "${kibana::install_base_url}/${kibana::version}.tar.gz"
     $download_file_name = "${kibana::version}.tar.gz"
